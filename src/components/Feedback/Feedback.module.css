@@ -1,0 +1,11 @@
+.list {
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 24px;
+  align-items: flex-start;
+}
+.itemTotal {
+  font-weight: 700;
+  color: rgb(18, 116, 18);
+}

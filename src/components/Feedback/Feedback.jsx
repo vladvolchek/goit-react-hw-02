@@ -1,21 +1,15 @@
-export const Feedback = ({ good, neutral, bad, total, positive }) => {
+import css from "./Feedback.module.css";
+export const Feedback = ({ data: { good, neutral, bad }, total }) => {
+  const totalPercent = Math.round(((good + neutral) / total) * 100);
   return (
-    <ul>
-      <li>
-        <span>Good: {good} </span>
-      </li>
-      <li>
-        <span>Neutral: {neutral}</span>
-      </li>
-      <li>
-        <span>Bad: {bad}</span>
-      </li>
-      <li>
-        <span>Total: {total}</span>
-      </li>
-      <li>
-        <span>Positive: {positive}%</span>
-      </li>
-    </ul>
+    <div>
+      <ul className={css.list}>
+        <li>Good: {good}</li>
+        <li>Neutral: {neutral}</li>
+        <li>Bad: {bad}</li>
+        <li className={css.itemTotal}>Total: {total}</li>
+        <li>Positive: {totalPercent}%</li>
+      </ul>
+    </div>
   );
 };
