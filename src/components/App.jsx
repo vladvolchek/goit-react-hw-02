@@ -3,7 +3,6 @@ import css from "./App.module.css";
 import { Description } from "./Description/Description";
 import { Feedback } from "./Feedback/Feedback";
 import { Notification } from "./Notification/Notification";
-import { Options } from "./Options/Options";
 
 const getDataFromLocalstorage = () => {
   return (
