@@ -1,4 +1,6 @@
-export const Feedback = ({ data: { good, neutral, bad }, total, totalPercent}) => {
+import css from "./Feedback.module.css";
+export const Feedback = ({ data: { good, neutral, bad }, total, totalPercent }) => {
+ 
   return (
     <div>
       <ul className={css.list}>
