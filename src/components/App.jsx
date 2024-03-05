@@ -5,6 +5,7 @@ import { Feedback } from "./Feedback/Feedback";
 import { Notification } from "./Notification/Notification";
 import { Options } from "./Options/Options"
 
+ const totalPercent = Math.round(((good + neutral) / total) * 100);
 const getDataFromLocalstorage = () => {
   return (
     JSON.parse(window.localStorage.getItem("FeedBacks")) ?? {
@@ -36,9 +37,12 @@ export const App = () => {
     });
   };
 
+  
   function getTotalFeedbacks() {
     return feedbacks.good + feedbacks.neutral + feedbacks.bad;
   }
+  const totalPercent = Math.round(((feedbacks.good + feedbacks.neutral) / totalFeedbacks ) * 100);
+ <Feedback data={feedbacks} total={totalFeedbacks} totalPercent={totalPercent}/>
 
   const totalFeedbacks = getTotalFeedbacks();
 
